@@ -11,7 +11,6 @@ encore db conn-uri appDB --shadow
 ```
 
 ## 3. Agregar en .env
-.env
 ```bash
 DATABASE_URL=
 OPENAI_API_KEY=
