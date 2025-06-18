@@ -1,3 +1,6 @@
+INSERT INTO "Company" ("uuid", "name", "ruc", "address", "createdAt") VALUES
+    ('44b40809-451e-489e-afb5-36e35cc63e87', 'Qompa SAC', '20123456789', 'Av. muy muy lejano', NOW());
+
 INSERT INTO "Voucher" (
     "uuid",
     "companyUuid",

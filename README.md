@@ -1,35 +1,19 @@
-# NestJS + Encore Example
+# NestJS + Encore Qompa
 
-This is an [Encore.ts](https://encore.dev/) + [NestJS](https://docs.nestjs.com/) example. It's a great way to learn how to combine Encore's backend 
-capabilities with a modern web framework — perfect for building a web app.
+## 1. Tecnologías utilizadas
+- Nest
+- Encore
+- Postgress
 
-## Developing locally
-
-When you have [installed Encore](https://encore.dev/docs/ts/install), you can create a new Encore application and clone this example with this command.
-
+## 2.Obtener Url de la BD
 ```bash
-encore app create my-app-name --example=ts/nestjs
+encore db conn-uri appDB --shadow```
 ```
 
-## Running locally
+## 3. Modificar los archivos .env
+.env
 ```bash
-encore run
+DATABASE_URL=
+OPENAI_API_KEY=
 ```
 
-You can also access Encore's [local developer dashboard](https://encore.dev/docs/ts/observability/dev-dash) on <http://localhost:9400/> to view traces, API documentation, and more.
-
-## Deployment
-
-Deploy your application to a staging environment in Encore's free development cloud:
-
-```bash
-git add -A .
-git commit -m 'Commit message'
-git push encore
-```
-
-Then head over to the [Cloud Dashboard](https://app.encore.dev) to monitor your deployment and find your production URL.
-
-From there you can also connect your own AWS or GCP account to use for deployment.
-
-Now off you go into the clouds!
