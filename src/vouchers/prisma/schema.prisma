@@ -1,0 +1,35 @@
+generator client {
+  provider = "prisma-client-js"
+  binaryTargets = ["native", "debian-openssl-3.0.x"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Company {
+  uuid        String    @id @default(uuid())
+  name        String
+  ruc         String    @unique
+  address     String?
+  createdAt   DateTime  @default(now())
+
+  vouchers    Voucher[]
+}
+
+model Voucher {
+  uuid           String   @id @default(uuid())
+  companyUuid    String
+  company        Company  @relation(fields: [companyUuid], references: [uuid])
+  supplierRuc    String
+  invoiceNumber  String
+  amount         Decimal  @db.Decimal(10, 2)
+  igv            Decimal  @db.Decimal(10, 2)
+  total          Decimal  @db.Decimal(10, 2)
+  status         String
+  issueDate      DateTime
+  documentType   String
+  createdAt      DateTime @default(now())
+}
+
